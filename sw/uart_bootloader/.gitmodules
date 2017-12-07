@@ -1,0 +1,6 @@
+[submodule "board_support/common_hwlib"]
+	path = board_support/common_hwlib
+	url = git@82.179.184.185:common/common_hwlib.git
+[submodule "board_support/urv_hwlib"]
+	path = board_support/urv_hwlib
+	url = git@82.179.184.185:urv/urv_hwlib.git

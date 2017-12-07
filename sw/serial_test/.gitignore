@@ -1,0 +1,7 @@
+*.o
+*.S
+*.elf
+*.bin
+*.msg
+common_hwlib/*
+urv_hwlib/*

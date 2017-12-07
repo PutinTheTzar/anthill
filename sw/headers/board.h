@@ -1,0 +1,61 @@
+/*
+ * DSI Shield
+ *
+ * Copyright (C) 2013-2014 twl
+ *
+ * This program is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 3 of the License, or (at your
+ * option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* board.h - system/hardware definitions */
+
+#ifndef __BOARD_H
+#define __BOARD_H
+
+#include <stdint.h>
+
+#include "riscv.h"
+
+#define BASE_CLOCK 100000000 // Xtal frequency
+
+#define BASE_UART    0x80000000
+#define BASE_GPIO    0x80001000
+#define BASE_SPI     0x80002000
+#define BASE_RS485   0x80008000
+#define BASE_FTDI240 0x80009000
+#define BASE_I2C     0x8000A000
+
+//DINS BASE ADDR
+#define BASE_REFCLK 0x80003000
+#define BASE_MLS    0x80004000
+#define BASE_IQ     0x80005000
+#define BASE_HPM    0x80006000
+#define BASE_AB     0x80007000
+#define BASE_ADCFIFO 0x8000B000
+#define BASE_DETECTOR 0x8000C000
+//============================================================
+#define UART_BAUDRATE  115200
+#define RS485_BAUDRATE 256000
+#define I2C_BAUDRATE   1000000
+
+static inline void writel ( uint32_t reg, uint32_t val)
+{
+	*(volatile uint32_t *)(reg) = val;
+}
+
+static inline uint32_t readl ( uint32_t reg )
+{
+	return *(volatile uint32_t *)(reg);
+}
+
+#endif

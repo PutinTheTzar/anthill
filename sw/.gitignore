@@ -1,0 +1,7 @@
+!.gitignore
+*.S
+*.o
+*.dat
+*.bin
+*.elf
+!anthill_hwlib/urv_hwlib/*.S
