@@ -7,6 +7,8 @@
 
 void main() {  
   gpio_set_direction(0xF0);
-  uint8_t gpio_data = gpio_read();
-  gpio_reset(gpio_data << 4);
+  while(1) {
+    uint8_t gpio_data = gpio_read();
+    gpio_reset(gpio_data << 4);
+  }
 }

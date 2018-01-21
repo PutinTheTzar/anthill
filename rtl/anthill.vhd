@@ -257,7 +257,7 @@ begin  -- rtl
     );
    
   U_GPIO_PINOUT: for I in 0 to 3 generate begin
-    leds_o(I) <= gpio_out(I) when (gpio_oen(I) = '1') else '0';
+    leds_o(I) <= gpio_out(I + 4) when (gpio_oen(I + 4) = '1') else '0';
     gpio_in(I) <= sw_i(I) when (gpio_oen(I) = '0') else '0';
     gpio_in(I + 4) <= sw_i(I) when (gpio_oen(I + 4) = '0') else '0';
   end generate U_GPIO_PINOUT;
